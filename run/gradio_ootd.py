@@ -107,11 +107,11 @@ def process_dc(vton_img, garm_img, category, n_samples, n_steps, image_scale, se
 block = gr.Blocks().queue()
 with block:
     with gr.Row():
-        gr.Markdown("# OOTDiffusion Demo")
+        gr.Markdown("# Try Before Buy")
     with gr.Row():
         gr.Markdown("## Half-body")
     with gr.Row():
-        gr.Markdown("***Support upper-body garments***")
+        gr.Markdown("***Support for upper-body garments***")
     with gr.Row():
         with gr.Column():
             vton_img = gr.Image(label="Model", sources='upload', type="filepath", height=384, value=model_hd)
@@ -172,7 +172,7 @@ with block:
     with gr.Row():
         gr.Markdown("## Full-body")
     with gr.Row():
-        gr.Markdown("***Support upper-body/lower-body/dresses; garment category must be paired!!!***")
+        gr.Markdown("***Support for upper-body/lower-body/dresses ***")
     with gr.Row():
         with gr.Column():
             vton_img_dc = gr.Image(label="Model", sources='upload', type="filepath", height=384, value=model_dc)
@@ -204,7 +204,7 @@ with block:
                 ])
         with gr.Column():
             garm_img_dc = gr.Image(label="Garment", sources='upload', type="filepath", height=384, value=garment_dc)
-            category_dc = gr.Dropdown(label="Garment category (important option!!!)", choices=["Upper-body", "Lower-body", "Dress"], value="Upper-body")
+            category_dc = gr.Dropdown(label="Garment category", choices=["Upper-body", "Lower-body", "Dress"], value="Upper-body")
             example = gr.Examples(
                 label="Examples (upper-body)",
                 inputs=garm_img_dc,
